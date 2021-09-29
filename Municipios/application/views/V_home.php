@@ -123,6 +123,6 @@
  	</div>
 
  </BODY>
- <script src="<?php echo base_url();?>static/js/j_inicio.js"></script>
- <script src="<?php echo base_url();?>static/sweetalert/js/sweetalert.min.js"></script>
+ <script type="text/javascript" src="<?php echo base_url();?>static/js/j_inicio.js"></script>
+ <script type="text/javascript" src="<?php echo base_url();?>static/sweetalert/js/sweetalert.min.js"></script>
 </html>
