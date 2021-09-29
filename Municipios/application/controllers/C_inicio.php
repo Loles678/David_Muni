@@ -17,12 +17,15 @@ class C_inicio extends CI_Controller {
 			unset($data, $menu, $arr_sesion);
 
 			$data = array();
-			//$menu = array();
+			$page = array();
 
 			$arr_sesion 	    = $this->M_global->variables();
-			$menu['d_sesion']	= $arr_sesion;
-			$data['arr_sesiom'] = $arr_sesion;
-			$this->load->view('V_home',$data);
+			$data['arr_sesion'] = $arr_sesion;
+			if($arr_sesion['id_pers']!= null){
+					$page['principal']	= $this->load->view('V_principal',$data);
+			}else {
+					$page['principal']	= $this->load->view('V_home',$data);
+			}
 
 		}
 }

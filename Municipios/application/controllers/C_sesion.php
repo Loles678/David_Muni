@@ -59,13 +59,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			{
 				$array_sesion = array();
 
-				$array_sesion['sesion_activa']		= $this->session->userdata('sesion_activa');
-				$array_sesion['id_pers'] 		= $this->session->userdata('id_per');
-				$array_sesion['nom_per'] 			= $this->session->userdata('nom_per');
-				$array_sesion['ap_per'] 			= $this->session->userdata('ap_per');
-				$array_sesion['correo'] 		= $this->session->userdata('correo');
-				$array_sesion['contraseña'] 			= $this->session->userdata('contraseña');
+				$array_sesion['sesion_activa']		= "Activa";
+				$array_sesion['id_pers'] 		= $consulta->Id_per
+				$array_sesion['nom_per'] 			= $consulta->nom_per;
+				$array_sesion['ap_per'] 			= $consulta->ap_per;
+				$array_sesion['correo'] 		= $consulta->correo;
+				$array_sesion['contraseña'] 			= $consulta->contraseña;
 
+        print_r("Sesion:");
+        print_r($array_sesion);
 				//Se carga la sesión
 				$this->session->set_userdata($array_sesion);
 
