@@ -3,13 +3,13 @@ class Inicio
 {
     public function ViewInicio()
     {
-        require_once '../Municipios2/Views/Vinicio.php';
+        require_once '../Municipio2/Views/Vinicio.php';
     }
 
     public function cerrar_sesion()
     {
       $this->session->sess_destroy();
-      redirect('../Municipios2/index.php');
+      redirect('../Municipio2/index.php');
     }
     public function login()
     {

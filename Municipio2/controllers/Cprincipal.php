@@ -4,7 +4,7 @@ class Principal
 
     public function ViewPrincipal()
     {
-        require_once '../Municipios2/Views/Vprincipal.php';
+        require_once '../Municipio2/Views/Vprincipal.php';
 
     }
 }
