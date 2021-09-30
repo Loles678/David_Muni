@@ -1,18 +1,16 @@
-$('a').click(function(a) {
+/*$('a').click(function(a) {
 	var id = $(this).attr("id");
-	if (id == 'cerrar_sesion') {
+	if (id == "subir_muni") {
 		$.ajax({
 			async: true,
-			url: 'C_sesion/cerrar_sesion',
-			type: 'POST',
-			dataType: 'json',
+			url: "C_smunicipios/index",
+			type: "POST",
 			success: function() {
-				swal("GOOD BYE");
+				swal("Cargando nueva sección");
+			},
+			error: function(request, status, error) {
+				alert("Algo salió mal");
 			}
 		});
 	}
-});
-
-$('#subir_muni').click(function(a) {
-
-});
+});*/

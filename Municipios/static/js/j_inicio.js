@@ -17,7 +17,7 @@ $("#btn_sesion").click(function(a) {
 			} else if (json.status == "200") {
 				swal(json.mensaj);
 				setTimeout(function() {
-					location.href = "C_principal/index";
+					location.reload();
 				}, 4000);
 			}
 		},

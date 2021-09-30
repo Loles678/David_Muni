@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_principal extends CI_Controller {
+class C_smunicipios extends CI_Controller {
 
 	function __construct()
 		{
@@ -13,11 +13,10 @@ class C_principal extends CI_Controller {
 
 		public function index()
 		{
-			$data = array();
 			$arr_sesion 	    = $this->M_global->variables();
 			$data['arr_sesion'] = $arr_sesion;
 			if($arr_sesion['sesion_activa'] == "Activa"){
-				$data['page'] = '<img class="img-fluid" src="https://www.qrocasa.com.mx/wp-content/uploads/2020/09/Tz7Iz7PaRi.jpg"/>';
+          $data['page'] = $this->load->view('V_smunicipios',$data,TRUE);
 					$this->load->view('V_principal',$data);
 			}
 			else {

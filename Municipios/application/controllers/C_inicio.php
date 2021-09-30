@@ -17,14 +17,14 @@ class C_inicio extends CI_Controller {
 			unset($data, $menu, $arr_sesion);
 
 			$data = array();
-			$page = array();
 
 			$arr_sesion 	    = $this->M_global->variables();
 			$data['arr_sesion'] = $arr_sesion;
 			if($arr_sesion['sesion_activa'] == "Activa"){
-					$page['principal']	= $this->load->view('V_principal',$data);
+					$data['page'] = '<img class="img-fluid" src="https://www.qrocasa.com.mx/wp-content/uploads/2020/09/Tz7Iz7PaRi.jpg"/>';
+					$this->load->view('V_principal',$data);
 			}else {
-					$page['principal']	= $this->load->view('V_home',$data);
+						$this->load->view('V_home',$data);
 			}
 
 		}

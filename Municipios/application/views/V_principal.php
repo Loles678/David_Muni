@@ -23,26 +23,26 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					<?php if($arr_sesion['sesion_activa']== "Activa"){
-            echo '<li class="nav-item"><a class="nav-link" id="cerrar_sesion">Cerrar sesión</a></li>';
+            echo '<li class="nav-item"><a class="nav-link" href="'.base_url().'C_sesion/cerrar_sesion" id="cerrar_sesion">Cerrar sesión</a></li>';
           }
           ?>
 				</ul>
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-					<li><li class="nav-item"><a class="nav-link" id="subir_muni">Subir municipios!</a></li>
+					<li><li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>C_smunicipios/" id="subir_muni">Subir municipios!</a></li>
 				</ul>
 				<form class="d-flex">
 				</form>
 			</div>
 		</div>
 	</nav>
-	<!--<header class="bg-dark py-5">
+	<header class="bg-dark py-5">
     <div class="container px-4 px-lg-5 my-5">
       <div class="text-center text-white">
-        <h1 class="display-4 fw-bolder">Los Moy's Restaurant</h1>
-        <p class="lead fw-normal text-white-50 mb-0">Ve las ofertas y el especial del día!</p>
+        <h1 class="display-4 fw-bolder">Bienvenido al sistema de municipio</h1>
+        <p class="lead fw-normal text-white-50 mb-0">...</p>
       </div>
     </div>
-  </header>-->
+  </header>
 	<div class="container-fluid mt-5">
 		<div class="row">
 			<!--layout izquierdo-->
@@ -51,7 +51,7 @@
 		<section class="py-5">
 			<div class="container px-4 px-lg-5 mt-5">
 				<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-					<!-- My content-->
+					<?php echo $page; ?>
 				</div>
 			</div>
 		</section>
