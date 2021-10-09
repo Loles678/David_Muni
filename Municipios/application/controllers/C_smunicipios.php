@@ -9,13 +9,16 @@ class C_smunicipios extends CI_Controller {
 			parent::__construct();
 			//Importamos el controlador de la sesion
 			$this->load->model('M_global');
+			$this->load->model('M_smunicipio');
 		}
 
 		public function index()
 		{
+			$data = array();
 			$arr_sesion 	    = $this->M_global->variables();
 			$data['arr_sesion'] = $arr_sesion;
 			if($arr_sesion['sesion_activa'] == "Activa"){
+					$data['municipio'] = $this->M_smunicipio->get_municipio();
           $data['page'] = $this->load->view('V_smunicipios',$data,TRUE);
 					$this->load->view('V_principal',$data);
 			}
