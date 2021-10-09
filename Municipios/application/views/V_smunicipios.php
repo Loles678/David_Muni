@@ -34,16 +34,23 @@
   </div>
   <div class="form-row align-items-center">
     <div class="col-auto my-1">
-      <label class="mr-sm-2" >Preference</label>
+      <label class="mr-sm-2" >Estado</label>
       <select class="custom-select mr-sm-2" id="select_muni">
-        <option selected>Choose...</option>
+        <option selected>Selecciona estado</option>
         <?php
-        foreach($municipio as $muni):
-            echo "<option>".$muni->NOM_MPO."</option>";
+        foreach($estado as $edo):
+            echo "<option id='".$edo->ID_EDO."'>".$edo->NOM_EDO."</option>";
           endforeach;
           ?>
       </select>
     </div>
+		<div class="form-row align-items-center">
+	    <div class="col-auto my-1">
+	      <label class="mr-sm-2" >Municipio</label>
+	      <select class="custom-select mr-sm-2" id="select_muni">
+	        <option selected>Selecciona municipio</option>
+	      </select>
+	    </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <!--
@@ -60,3 +67,4 @@
 
 </body>
 <script type="text/javascript" src="<?php echo base_url();?>static/sweetalert/js/sweetalert.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>static/js/municipio.js"></script>
