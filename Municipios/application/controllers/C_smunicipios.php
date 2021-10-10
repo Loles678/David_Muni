@@ -10,6 +10,7 @@ class C_smunicipios extends CI_Controller {
 			//Importamos el controlador de la sesion
 			$this->load->model('M_global');
 			$this->load->model('M_smunicipio');
+			$this->load->model('M_sesion');
 		}
 
 		public function index()
@@ -26,9 +27,10 @@ class C_smunicipios extends CI_Controller {
 					redirect(base_url("C_inicio"));
 			}
 		}
+
 		public function municipio(){
 			unset($id_edo,$data);
-			$id_edo = $this->input->post('sel_muni');
+			$id_edo = $this->input->post('id_edo');
 			$json = array();
 			$consulta = $this->M_smunicipio->get_municipio($id_edo);
 			if(isset($consulta)){
@@ -40,4 +42,6 @@ class C_smunicipios extends CI_Controller {
 			}
 			echo json_encode($json);
 		}
+
+	
 }

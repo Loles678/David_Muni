@@ -27,9 +27,9 @@
           }
           ?>
 				</ul>
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+				<!--<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					<li><li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>C_smunicipios/" id="subir_muni">Subir municipios!</a></li>
-				</ul>
+				</ul>-->
 				<form class="d-flex">
 				</form>
 			</div>

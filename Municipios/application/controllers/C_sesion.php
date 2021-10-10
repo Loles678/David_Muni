@@ -81,6 +81,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		}
 
+    public function registrarse(){
+      unset($nom,$ap,$email,$pass,$id_edo,$id_muni,$data);
+      $nom = $this->input->post('nom');
+      $ap = $this->input->post('ap');
+      $email = $this->input->post('email');
+      $pass = $this->input->post('pass');
+      $id_edo = $this->input->post('id_edo');
+      $id_muni = $this->input->post('id_muni');
+      $json = array();
+      $data = array('nom_per'=>$nom,'ap_per'=>$ap,'correo'=>$email,
+      'contraseña'=>$pass,'ID_MPO'=>$id_muni,'ID_EDO'=>$id_edo);
+      $consulta = $this->M_sesion->registrarse($data);
+      if(isset($consulta)){
+        $json['status'] = 200;
+        $json['mensaje'] = "Registro exítoso";
+        $consulta = $this->M_sesion->login($pass);
+        $this->carga_sesion($consulta->Id_per);
+      }
+      else{
+        $json['status'] = 500;
+      }
+      echo json_encode($json);
+    }
+
 		public function cerrar_sesion()
 		{
 			$this->session->sess_destroy();

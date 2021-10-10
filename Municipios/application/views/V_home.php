@@ -19,109 +19,126 @@
 
 <BODY>
 	<DIV class="container">
-    <DIV class="row">
-      <DIV class="col col-md-12">
-        <H2>Bienvenido al sistema de municipio</H2>
-      </DIV>
-    </DIV>
+		<DIV class="row">
+			<DIV class="col col-md-12">
+				<H2>Bienvenido al sistema de municipio</H2>
+			</DIV>
+		</DIV>
 
-    <DIV class="row">
-      <DIV class="col col-md-8">
-        <DIV class="card card-default">
-          <DIV class="card-header bg-dark text-white"><STRONG>Inicio
-              de sesión</STRONG>
-          </DIV>
+		<DIV class="row">
+			<DIV class="col col-md-8">
+				<DIV class="card card-default">
+					<DIV class="card-header bg-dark text-white"><STRONG>Inicio
+							de sesión</STRONG>
+					</DIV>
 
-          <DIV class="card-body">
+					<DIV class="card-body">
 
-            <FORM action="inicio.php" method="post" id="form-login">
+						<FORM action="inicio.php" method="post" id="form-login">
 
-              <DIV class="form-group" id="group-correo">
-                <LABEL><STRONG>Correo:</STRONG></LABEL>
-                <INPUT type="text" class="form-control" name="correo" id="correo">
-              </DIV>
+							<DIV class="form-group" id="group-correo">
+								<LABEL><STRONG>Correo:</STRONG></LABEL>
+								<INPUT type="text" class="form-control" name="correo" id="correo">
+							</DIV>
 
-              <DIV class="form-group" id="group-contrasenia">
-                <LABEL><STRONG>Contraseña:</STRONG></LABEL>
-                <INPUT type="password" class="form-control" name="contrasenia" id="contrasenia">
-              </DIV>
+							<DIV class="form-group" id="group-contrasenia">
+								<LABEL><STRONG>Contraseña:</STRONG></LABEL>
+								<INPUT type="password" class="form-control" name="contrasenia" id="contrasenia">
+							</DIV>
 
-              <BUTTON id="btn_sesion" type="submit" class="btn btn-success"><I class="fas fa-sign-in-alt"></I>
-                Iniciar sesión</BUTTON>
+							<BUTTON id="btn_sesion" type="submit" class="btn btn-success"><I class="fas fa-sign-in-alt"></I>
+								Iniciar sesión</BUTTON>
 
-            </FORM>
+						</FORM>
 
+					</DIV>
 
-          </DIV>
+					<DIV class="card-footer bg-secondary text-white">
+						<A id="registrarse" class="card-link text-white" data-toggle="modal" data-target="#modal_correo">Regístrese como nuevo usuario</A>
+					</DIV>
+				</DIV>
+			</DIV>
+		</DIV>
 
-          <DIV class="card-footer bg-secondary text-white">
-            <A href="#" class="card-link text-white" data-toggle="modal" data-target="#modal-correo">Regístrese como nuevo usuario</A>
-          </DIV>
-        </DIV>
-      </DIV>
-    </DIV>
+		<BR />
 
-    <BR />
-
-    <DIV class="row" id="mensaje-validacion">
-
-
-    </DIV>
-
-    <!-- The Modal -->
-    <div class="modal fade" id="modal-correo">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Escriba sus datos</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-
-          <form action="registro.php" method="post">
-            <!-- Modal body -->
-            <div class="modal-body">
-
-              <div class="row">
-
-                <DIV class="form-group col col-md-4">
-                  <LABEL><STRONG>Nombre:</STRONG></LABEL>
-                  <INPUT type="text" class="form-control" name="nombrenuevo" id="nombre-nuevo" />
-                </DIV>
-                <DIV class="form-group col col-md-8">
-                  <LABEL><STRONG>Apellidos:</STRONG></LABEL>
-                  <INPUT type="text" class="form-control" name="apellidosnuevo" id="apellidos-nuevo" />
-                </DIV>
-              </div>
-
-              <div class="row">
-                <DIV class="form-group col col-md-8">
-                  <LABEL><STRONG>Correo:</STRONG></LABEL>
-                  <INPUT type="text" class="form-control" name="correonuevo" id="correo-nuevo" />
-                </DIV>
-                <DIV class="form-group col col-md-4">
-                  <LABEL><STRONG>Contraseña:</STRONG></LABEL>
-                  <INPUT type="password" class="form-control" name="contrasenianuevo" id="contrasenia-nuevo" />
-                </DIV>
-              </div>
-
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-secondary" id="enviar-correo-nuevo"><I class="fas fa-paper-plane fa-2x"></I> Enviar</button>
-            </div>
-
-          </form>
-
-        </div>
-      </div>
-    </div>
-
+		<DIV class="row" id="mensaje-validacion"></DIV>
 	</DIV>
+	<!-- The Modal -->
+	<div class="modal false" tabindex="-1" role="dialog" id="modal_correo">
+		<div class="modal-dialog" role="dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Escribe sus datos</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="post">
+					<div class="modal-body">
+						<div class="row">
+							<div class="form-group">
+								<label>Nombre(s)</label>
+								<input type="text" class="form-control" id="txt_nomb" placeholder="Escribe nombre(s)">
+								<small id="nombre" class="form-text text-muted"></small>
+							</div>
+							<div class="form-group">
+								<label>Apellidos</label>
+								<input type="text" class="form-control" id="txt_apellidos" placeholder="Escribe tus apellidos">
+								<small id="apellidos" class="form-text text-muted"></small>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group">
+								<label>Email address</label>
+								<input type="email" class="form-control" id="txt_email" placeholder="Enter email">
+								<small id="email" class="form-text text-muted"></small>
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+								<input type="password" class="form-control" id="txt_pass" placeholder="Password">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-row align-items-center">
+								<div class="col-auto my-1">
+									<label class="mr-sm-2">Estado</label>
+									<select class="custom-select mr-sm-2" id="select_edo">
+										<option id="0" selected>Selecciona estado</option>
+										<?php
+									foreach($estado as $edo):
+											echo "<option id='".$edo->ID_EDO."'>".$edo->NOM_EDO."</option>";
+										endforeach;
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="form-row align-items-center">
+								<div class="col-auto my-1">
+									<label class="mr-sm-2">Municipio</label>
+									<select class="custom-select mr-sm-2" id="select_muni">
+										<option id="0" selected>Selecciona municipio</option>
+									</select>
+								</div>
+
+							</div>
+						</div>
+
+
+
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary" id="registro">Save changes</button>
+						</div>
+					</div>
+			</div>
+			</form>
+		</div>
+	</div>
+	</div>
 </BODY>
 <script type="text/javascript" src="<?php echo base_url();?>static/js/j_inicio.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>static/sweetalert/js/sweetalert.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>static/js/municipio.js"></script>
 
 </html>

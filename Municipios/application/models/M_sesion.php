@@ -27,6 +27,14 @@
 			}
 		}
 
+		public function registrarse($data){
+			$this->db->insert('personas', $data);
+			if($this->db->affected_rows() > 0)
+				return true;
+			else
+				return false;
+		}
+
 		public function carga_sesion($id_usuario)
 		{
 			$this->db->select("*");

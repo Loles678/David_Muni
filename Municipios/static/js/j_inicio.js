@@ -26,3 +26,16 @@ $("#btn_sesion").click(function(a) {
 		}
 	});
 });
+
+$('#registrarse').click(function() {
+	$('#modal_correo').modal({
+		show: true
+	});
+	$('#modal_correo').modal('show');
+	$('#modal_correo').modal('toggle');
+});
+//$('#myModal').modal('toggle');
+/*$('#modal_correo').modal({
+	show: true
+});*/
+//$('#myModal').modal('hide')
