@@ -1,53 +1,109 @@
-<HTML>
-	<!--php
-	require_once(color.php);
-	?>-->
-<HEAD>
-	<TITLE>Práctica 2 - Objetos PHP</TITLE>
-	<META charset="UTF-8">
-	<LINK rel="stylesheet" href="../bootstrap5/css/bootstrap.min.css">
-	<LINK rel="stylesheet" href="../fontawesome/css/all.min.css">
+<?php
+require("Circulo.php");
+require('Color.php');
 
-	<SCRIPT src="js/jquery-3.5.1.min.js"></SCRIPT>
-	<SCRIPT src="bootstrap/js/bootstrap.min.js"></SCRIPT>
+$icon = array("fas fa-ambulance",
+	"fab fa-android",
+	"fab fa-angellist",
+	"fas fa-bath",
+	"fas fa-bed",
+	"fas fa-biohazard",
+	"fas fa-bomb",
+	"fas fa-bone",
+	"fas fa-bong",
+	"fas fa-book-dead",
+	"fas fa-book-open",
+	"fas fa-broom");
 
-	<!-- NUEVO script para manipular eventos -->
-	<SCRIPT src="js/practica2.js"></SCRIPT>
-	
-</HEAD>
+if (isset($_POST['value'])==null) {
 
-<BODY>
+}else{
+	$cant = $_POST['value'];
 
-<DIV class="container col col-md-12">
-<H3>Práctica 2 - Objetos PHP</H3>
+	for($i=0;$i<$cant;$i++){
+		$color = new Color();
+		print_r($color);
+		$arreglo[$i] = new Circulo
+		(random_int(25, 300),
+			random_int(0, 1100),
+			random_int(49, 559),
+			$icon[random_int(0,11)],
+			$color);
+	}
+}
 
-<DIV class="row">
-
-	<DIV class="col col-md-2">
-		<FORM id="form-cantidad">
-		<DIV class="form-group" id="group-cantidad">
-			<LABEL><STRONG>Cantidad de objetos:</STRONG></LABEL>
-			<INPUT type="text" id="cantidad" class="form-control">
-		</DIV>
-		<BUTTON type="submit" 
-			class="btn btn-success"><I
-				class="fas fa-paper-plane fa-2x"></I> Enviar</BUTTON>
-		</FORM>
-	</DIV>
-
-	<DIV class="col col-md-10">
-		<DIV class="card" style="height: 550px !important;">
-			<DIV class="card-header bg-secondary text-white"><STRONG>Resultado de la práctica</STRONG></DIV>
-			<DIV class="card-body" id="resultado">Aquí se muestran los objetos...</DIV>
-            <div style="background-color:<?php echo randomColor(); ?>; padding:3px; heigh:60px; width:200px;"><?php echo randomColor(); ?></div>
-		</DIV>
-	</DIV>
-
-</DIV>
-
-</DIV>
-
-</BODY>
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Practica 2</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<script src="https://kit.fontawesome.com/6f6eafc8d3.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
 
 
-</HTML>
+	<div class="container col-md-12">
+
+		<div class="row">
+
+			<div class="col-md-2">
+			</div>
+			<div class="jumbotron col-md-8">
+				<div class=" col-md-8" style="align-content: flex-start;">
+					<br/>
+
+					<label>
+						<h3>
+							¿Cuántos circulos deseas ingresar?
+						</h3>
+					</label>
+					<form method="post" action="">
+						<input style="height: 50px; width: 250px; text-align: center;" type="text" name="value" id="<?php $cant?>">
+
+						<input type="submit" class="btn btn-info" style="margin-left: 55px;">
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<br/>
+			<br/>
+		</div>
+		<div class= "row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<div class="card" style="height: 900px; width: 1300px; display: flex; position: ;">
+					<div class="card-header bg-success text-white">
+						<H4>
+							Dibujos
+						</H4>
+					</div>
+					<div class="card-body">
+
+						<?php
+						if (isset($cant)) {
+							foreach ($arreglo as $figura) {
+								echo "
+								<div>
+								$figura
+								</div>
+								";
+							}
+						}
+
+						?>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
