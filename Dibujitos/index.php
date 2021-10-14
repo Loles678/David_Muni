@@ -22,7 +22,6 @@ if (isset($_POST['value'])==null) {
 
 	for($i=0;$i<$cant;$i++){
 		$color = new Color();
-		print_r($color);
 		$arreglo[$i] = new Circulo
 		(random_int(25, 300),
 			random_int(0, 1100),
